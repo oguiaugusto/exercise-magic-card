@@ -24,10 +24,8 @@ describe(' Testa a função getMagicCard', () => {
   });
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
-    // expect.assertions();
+    expect.assertions();
 
-    // expect(favoriteCards).toHaveLength(4);
-    // implemente seus testes aqui
-
+    expect(favoriteCards).toHaveLength(4);
   });
 });
