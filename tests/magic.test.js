@@ -2,10 +2,15 @@ const { getMagicCard } = require('../src/magic.js');
 const favoriteCards = require('../data/favoriteCards.js');
 
 const retrievesFavoriteCards = () => {
-  // implemente sua função aqui
-}
+  while (favoriteCards.length > 4) {
+    favoriteCards.pop();
+  }
+};
 
 describe(' Testa a função getMagicCard', () => { 
+  afterEach(() => {
+    retrievesFavoriteCards();
+  });
 
   it('Testa se um novo card é adicionado a cada execução', async () => {
     expect.assertions(1);
