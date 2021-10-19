@@ -24,4 +24,10 @@ describe(' Testa a função getMagicCard', () => {
     const { types } = magicCard;
     expect(Array.isArray(types)).toBe(true);
   });
+  it('A propriedade subtypes possui length === 2', async () => {
+    expect.assertions(1);
+    const magicCard = await getMagicCardSimulator('130550');
+    const { subtypes } = magicCard;
+    expect(subtypes.length).toEqual(2);
+  });
 });
