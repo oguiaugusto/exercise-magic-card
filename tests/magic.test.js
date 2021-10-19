@@ -30,4 +30,14 @@ describe(' Testa a função getMagicCard', () => {
     const { subtypes } = magicCard;
     expect(subtypes.length).toEqual(2);
   });
+  it('As demais propriedades possuem os valores esperados', async () => {
+    expect.assertions(3);
+
+    const magicCard = await getMagicCardSimulator('130550');
+    const { rarity, name, manaCost } = magicCard;
+    
+    expect(rarity).toEqual('Uncommon');
+    expect(name).toEqual("Ancestor's Chosen");
+    expect(manaCost).toEqual('{5}{W}{W}');
+  });
 });
